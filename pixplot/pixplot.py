@@ -7,6 +7,7 @@ import warnings; warnings.filterwarnings('ignore')
 
 from os.path import basename, join, exists, dirname, realpath
 from distutils.dir_util import copy_tree
+import numpy as np
 import pkg_resources
 import datetime
 import argparse
@@ -15,6 +16,9 @@ import glob2
 import uuid
 import sys
 import os
+
+if not hasattr(np, 'float'):
+  np.float = float
 
 def timestamp():
   '''Return a string for printing the current time'''
@@ -606,7 +610,7 @@ def process_single_layout_umap(v, **kwargs):
   if cuml_ready:
     z = model.fit(v).embedding_
   else:
-    if os.path.exists(out_path) and kwargs['use_cache']: 
+    if os.path.exists(out_path) and kwargs['use_cache']:
       return {
         'variants': [
           {

@@ -5,6 +5,7 @@
 *.ipynb
 *.egg-info
 *.ruby-version
+.idea
 manifest.txt
 missing-metadata.txt
 dist
