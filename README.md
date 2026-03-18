@@ -10,11 +10,11 @@ See the [change log](https://github.com/YaleDHLab/pix-plot/wiki/Change-Log) for 
 
 We maintain several platform-specific [installation cookbooks](https://github.com/YaleDHLab/pix-plot/wiki) online.
 
-Broadly speaking, to install the Python dependencies, we recommend you [install Anaconda](https://www.anaconda.com/products/individual#Downloads) and then create a conda environment with a Python 3.7 runtime:
+Broadly speaking, to install the Python dependencies, we recommend you [install Anaconda](https://www.anaconda.com/products/individual#Downloads) and then create a conda environment with a Python 3.x runtime:
 
 ```bash
-conda create --name=3.7 python=3.7
-source activate 3.7
+conda create --name=3.10 python=3.10
+source activate 3.10
 ```
 
 Then you can install the dependencies by running:
@@ -64,7 +64,7 @@ image_datasets.oslomini.download()
 The `.download()` command will make a directory named `datasets` in your current working directory. That `datasets` directory will contain a subdirectory named 'oslomini', which contains a directory of images and another directory with a CSV file of image metadata. Using that data, we can next build a plot:
 
 ```bash
-pixplot --images "datasets/oslomini/images/*" --metadata "datasets/oslomini/metadata/metadata.csv"
+pixplot --images "datasets/oslomini/images/**" --metadata "datasets/oslomini/metadata/metadata.csv"
 ```
 
 ## Creating Massive Plots
